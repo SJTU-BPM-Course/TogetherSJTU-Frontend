@@ -5,6 +5,7 @@ import HelloWorld from '@/components/HelloWorld'
 import AppIndex from "../home/AppIndex";
 import Login from "../components/Login";
 import App from "../App";
+import TeacherHome from "../components/TeacherHome";
 
 Vue.use(Router)
 
@@ -25,7 +26,13 @@ export default new Router({
     {
       path: '/index',
       name: 'AppIndex',
-      component: AppIndex
+      component: AppIndex,
+      redirect: '/login'
+    },
+    {
+      path: '/teacherHome',
+      name: 'TeacherHome',
+      component: TeacherHome
     }
 
 
