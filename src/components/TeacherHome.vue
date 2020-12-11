@@ -1,10 +1,15 @@
 <template>
-  <h1>Teacher Home Page</h1>
+  <div>
+    <router-view></router-view>
+    <NavMenu></NavMenu>
+  </div>
 </template>
 
 <script>
+import NavMenu from "./NavMenu";
 export default {
-  name: "TeacherHome"
+  name: "TeacherHome",
+  components: {NavMenu}
 }
 </script>
 
