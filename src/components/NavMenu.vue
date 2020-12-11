@@ -1,20 +1,39 @@
 <template>
-  <el-menu
-    :default-active="'/index'"
-    router
-    mode="horizontal"
-    background-color="white"
-    text-color="#222"
-    active-text-color="red"
-    style="min-width: 1300px">
-    <el-menu-item v-for="(item,i) in navList" :key="i" :index="item.name">
-      {{ item.navItem }}
-    </el-menu-item>
-    <a href="#nowhere" style="color: #222;float: right;padding: 20px;">更多功能</a>
-    <i class="el-icon-menu" style="float:right;font-size: 40px;color: #222;padding-top: 8px"></i>
-    <span style="position: absolute;padding-top: 20px;right: 43%;font-size: 20px;font-weight: bold">Together SJTU</span>
-    <img src="../assets/sjtu64x64.png" style="padding-left: 50px;"></img>
-  </el-menu>
+  <div>
+    <el-menu
+      :default-active="currentPath"
+      router
+      mode="horizontal"
+      background-color="white"
+      text-color="#222"
+      active-text-color="#0366d6"
+      style="min-width: 1300px; min-height: 70px;">
+      <el-menu-item v-for="(item,i) in navList" :key="i" :index="item.name" style="font-size: 20px">
+        {{ item.navItem }}
+      </el-menu-item>
+      <img src="../assets/sjtu64x64.png" style="position: absolute; right: 58%">
+      <span
+        style="position: absolute;padding-top: 20px;right: 43%;font-size: 30px;font-weight: bold">Together SJTU</span>
+      <el-input
+        placeholder="快速搜索"
+        prefix-icon="el-icon-search"
+        size="medium"
+        style="width: 300px; position:absolute; margin-top: 12px; right: 18%"
+        v-model="keywords">
+      </el-input>
+      <el-button type="primary" style="position: absolute; margin-top:12px; right: 12%;">搜索</el-button>
+      <el-dropdown split-button type="primary" style="position: absolute; margin-top: 12px; right: 0%;">
+        张学友（教师）
+        <el-dropdown-menu slot="dropdown">
+          <el-dropdown-item>个人中心</el-dropdown-item>
+          <el-dropdown-item>我的圈子</el-dropdown-item>
+          <el-dropdown-item>我的活动</el-dropdown-item>
+          <el-dropdown-item>我的班级</el-dropdown-item>
+          <el-dropdown-item>退出登录</el-dropdown-item>
+        </el-dropdown-menu>
+      </el-dropdown>
+    </el-menu>
+  </div>
 </template>
 
 <script>
@@ -23,11 +42,11 @@ export default {
   data() {
     return {
       navList: [
-        {name: '/teacherHome', navItem: '首页'},
-        {name: '/teacherHome', navItem: '活动'},
-        {name: '/teacherHome', navItem: '圈子'},
-        {name: '/teacherHome', navItem: '实习/招聘'},
-        {name: '/teacherHome', navItem: '客户端'},
+        {name: '/teacherIndex', navItem: '首页'},
+        {name: '/teacherActivity', navItem: '活动'},
+        {name: '/teacherCircle', navItem: '圈子'},
+        {name: '/teacherDummy', navItem: '占位符'},
+        {name: '/teacherDummy', navItem: '占位符'},
       ]
     }
   }
@@ -42,4 +61,5 @@ a {
 span {
   pointer-events: none;
 }
+
 </style>
