@@ -10,6 +10,8 @@ import TeacherIndex from "../components/teacher/TeacherIndex";
 import TeacherActivity from "../components/teacher/TeacherActivity";
 import TeacherCircle from "../components/teacher/TeacherCircle";
 import TeacherDummy from "../components/teacher/TeacherDummy";
+import TeacherAdmin from "../components/teacher/TeacherAdmin";
+import ActivityForm from "../components/teacher/ActivityForm";
 
 Vue.use(Router)
 
@@ -55,10 +57,16 @@ export default new Router({
           component: TeacherCircle
         },
         {
+          path: '/teacherAdmin',
+          name: TeacherAdmin,
+          component: TeacherAdmin,
+        },
+        {
           path: '/teacherDummy',
           name: TeacherDummy,
           component: TeacherDummy
-        }
+        },
+
       ]
     }
 

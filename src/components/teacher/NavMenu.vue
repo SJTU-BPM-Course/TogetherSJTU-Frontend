@@ -11,7 +11,7 @@
       <el-menu-item v-for="(item,i) in navList" :key="i" :index="item.name" style="font-size: 20px">
         {{ item.navItem }}
       </el-menu-item>
-      <img src="../assets/sjtu64x64.png" style="position: absolute; right: 58%">
+      <img src="@/assets/sjtu64x64.png" style="position: absolute; right: 58%">
       <span
         style="position: absolute;padding-top: 20px;right: 43%;font-size: 30px;font-weight: bold">Together SJTU</span>
       <el-input
@@ -45,8 +45,8 @@ export default {
         {name: '/teacherIndex', navItem: '首页'},
         {name: '/teacherActivity', navItem: '活动'},
         {name: '/teacherCircle', navItem: '圈子'},
-        {name: '/teacherDummy', navItem: '占位符'},
-        {name: '/teacherDummy', navItem: '占位符'},
+        {name: '/teacherAdmin', navItem: '管理'},
+        // {name: '/teacherDummy', navItem: '占位符'},
       ]
     }
   }
