@@ -5,11 +5,11 @@ import HelloWorld from '@/components/HelloWorld'
 import AppIndex from "../home/AppIndex";
 import Login from "../components/Login";
 import App from "../App";
-import TeacherHome from "../components/TeacherHome";
-import TeacherIndex from "../components/TeacherIndex";
-import TeacherActivity from "../components/TeacherActivity";
-import TeacherCircle from "../components/TeacherCircle";
-import TeacherDummy from "../components/TeacherDummy";
+import TeacherHome from "../components/teacher/TeacherHome";
+import TeacherIndex from "../components/teacher/TeacherIndex";
+import TeacherActivity from "../components/teacher/TeacherActivity";
+import TeacherCircle from "../components/teacher/TeacherCircle";
+import TeacherDummy from "../components/teacher/TeacherDummy";
 
 Vue.use(Router)
 

@@ -10,19 +10,19 @@
 <!--        <img :src="item.imageURL"/>-->
 <!--      </el-carousel-item>-->
       <el-carousel-item>
-        <img src="../assets/activity-image-1.png"/>
+        <img src="@/assets/activity-image-1.png"/>
       </el-carousel-item>
       <el-carousel-item>
-        <img src="../assets/activity-image-2.png"/>
+        <img src="@/assets/activity-image-2.png"/>
       </el-carousel-item>
       <el-carousel-item>
-        <img src="../assets/activity-image-3.png"/>
+        <img src="@/assets/activity-image-3.png"/>
       </el-carousel-item>
       <el-carousel-item>
-        <img src="../assets/activity-image-4.png"/>
+        <img src="@/assets/activity-image-4.png"/>
       </el-carousel-item>
       <el-carousel-item>
-        <img src="../assets/background.jpg"/>
+        <img src="@/assets/background.jpg"/>
       </el-carousel-item>
     </el-carousel>
   </div>

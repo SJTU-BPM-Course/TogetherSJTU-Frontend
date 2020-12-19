@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import NavMenu from "./NavMenu";
+import NavMenu from "../NavMenu";
 export default {
   name: "TeacherHome",
   components: {NavMenu}
