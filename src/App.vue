@@ -9,7 +9,15 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  sockets:{
+    message:function (data) {
+      this.$notify.info(data);
+    }
+  },
+  created() {
+    this.$socket.emit('loginWeb','Zhang Xueyou');
+  }
 }
 </script>
 
