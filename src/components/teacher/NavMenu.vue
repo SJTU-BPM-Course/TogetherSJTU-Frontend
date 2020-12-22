@@ -26,7 +26,7 @@
         张学友（教师）
         <el-dropdown-menu slot="dropdown">
           <el-dropdown-item>个人中心</el-dropdown-item>
-          <el-dropdown-item>我的圈子</el-dropdown-item>
+          <el-dropdown-item>活动日期挑选辅助</el-dropdown-item>
           <el-dropdown-item>我的活动</el-dropdown-item>
           <el-dropdown-item>我的班级</el-dropdown-item>
           <el-dropdown-item>退出登录</el-dropdown-item>
@@ -44,7 +44,7 @@ export default {
       navList: [
         {name: '/teacherIndex', navItem: '首页'},
         {name: '/teacherActivity', navItem: '活动'},
-        {name: '/teacherCircle', navItem: '圈子'},
+        {name: '/activityCalendar', navItem: '日程'},
         {name: '/teacherAdmin', navItem: '管理'},
         // {name: '/teacherDummy', navItem: '占位符'},
       ]
