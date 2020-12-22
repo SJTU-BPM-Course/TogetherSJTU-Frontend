@@ -23,12 +23,12 @@
       </el-input>
       <el-button type="primary" style="position: absolute; margin-top:12px; right: 12%;">搜索</el-button>
       <el-dropdown split-button type="primary" style="position: absolute; margin-top: 12px; right: 0%;">
-        张学友（教师）
+        肖战（教务处）
         <el-dropdown-menu slot="dropdown">
           <el-dropdown-item>个人中心</el-dropdown-item>
-          <el-dropdown-item>我的圈子</el-dropdown-item>
-          <el-dropdown-item>我的活动</el-dropdown-item>
-          <el-dropdown-item>我的班级</el-dropdown-item>
+          <el-dropdown-item>圈子</el-dropdown-item>
+          <el-dropdown-item>活动</el-dropdown-item>
+          <el-dropdown-item>班级</el-dropdown-item>
           <el-dropdown-item>退出登录</el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
@@ -41,8 +41,12 @@ export default {
   name: 'Navgation',
   data() {
     return {
+      keywords: '',
+      currentPath: '/adminPending',
       navList: [
         {name: '/adminPending', navItem: '待审核'},
+        // {name: '/adminPending', navItem: '待审核'},
+        // {name: '/adminPending', navItem: '待审核'},
       ]
     }
   }

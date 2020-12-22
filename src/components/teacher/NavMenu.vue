@@ -41,6 +41,7 @@ export default {
   name: 'NavMenu',
   data() {
     return {
+      currentPath: '/teacherIndex',
       navList: [
         {name: '/teacherIndex', navItem: '首页'},
         {name: '/teacherActivity', navItem: '活动'},
