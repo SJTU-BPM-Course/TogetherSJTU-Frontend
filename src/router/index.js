@@ -12,6 +12,8 @@ import TeacherCircle from "../components/teacher/TeacherCircle";
 import TeacherDummy from "../components/teacher/TeacherDummy";
 import TeacherAdmin from "../components/teacher/TeacherAdmin";
 import ActivityForm from "../components/teacher/ActivityForm";
+import AdminHome from "../components/admin/AdminHome";
+import AdminPending from "../components/admin/AdminPending";
 
 Vue.use(Router)
 
@@ -23,7 +25,7 @@ export default new Router({
       path: '/',
       name: 'HelloWorld',
       component: HelloWorld,
-      redirect: '/teacherHome',
+      redirect: '/adminHome',
     },
     {
       path: '/login',
@@ -35,6 +37,18 @@ export default new Router({
       name: 'AppIndex',
       component: AppIndex,
       redirect: '/login'
+    },
+    {
+      path: '/adminHome',
+      name: 'AdminHome',
+      component: AdminHome,
+      children: [
+        {
+          path: '/adminPending',
+          name: 'AdminPending',
+          component: AdminPending
+        }
+      ]
     },
     {
       path: '/teacherHome',
