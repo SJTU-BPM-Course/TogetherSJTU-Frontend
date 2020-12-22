@@ -2,7 +2,7 @@
   <!-- id 与下面的 css 绑定 -->
   <div id="app">
     <router-view/>
-  <!--router view 表示在 index.js 声明的视图会嵌入到这里-->
+    <!--router view 表示在 index.js 声明的视图会嵌入到这里-->
 
   </div>
 </template>
@@ -10,13 +10,14 @@
 <script>
 export default {
   name: 'App',
-  sockets:{
-    message:function (data) {
-      this.$notify.info(data);
+  sockets: {
+    message: function (data) {
+      this.$notify.info(decodeURI(data));
+
     }
   },
   created() {
-    this.$socket.emit('loginWeb','Zhang Xueyou');
+    this.$socket.emit('loginWeb', 'Zhang Xueyou');
   }
 }
 </script>
