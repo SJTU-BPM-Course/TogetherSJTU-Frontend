@@ -12,6 +12,11 @@
           <span style="margin-left: 10px">{{ scope.row.activityID }}</span>
         </template>
       </el-table-column>
+      <el-table-column label="活动申请人" width="100" style="text-align: center" align="center">
+        <template slot-scope="scope">
+          <span style="margin-left: 10px">{{ scope.row.activityCreator }}</span>
+        </template>
+      </el-table-column>
       <el-table-column label="活动名称" width="350" style="text-align: center" align="center">
         <template slot-scope="scope">
           <el-popover trigger="hover" placement="right">
