@@ -51,14 +51,17 @@
             icon="el-icon-check"
             size="small"
             type="success"
-            v-bind:disabled="buttonDisabled[scope.$index]"
-            @click="handlePass(scope.$index, scope.row)">{{ buttonDisabled[scope.$index] === true ? '已通过' : '通过' }}
+            v-bind:disabled="passButtonDisabled[scope.$index] || feedbackBtnDisabled[scope.$index]"
+            @click="handlePass(scope.$index, scope.row)">
+            {{ passButtonDisabled[scope.$index] === true ? '已通过' : '通过' }}
           </el-button>
           <el-button
             icon="el-icon-edit"
             size="small"
             type="danger"
-            @click="handleReview(scope.$index, scope.row)">反馈
+            v-bind:disabled="feedbackBtnDisabled[scope.$index] || passButtonDisabled[scope.$index]"
+            @click="handleReview(scope.$index, scope.row)">
+            {{ feedbackBtnDisabled[scope.$index] === true ? '已反馈' : '反馈' }}
           </el-button>
         </template>
       </el-table-column>
@@ -83,7 +86,8 @@ export default {
   data() {
     return {
       pendingList: [],
-      buttonDisabled: [],
+      passButtonDisabled: [],
+      feedbackBtnDisabled: [],
       showFeedback: false,
     }
   },
@@ -94,7 +98,8 @@ export default {
         console.log(response.data);
         this.pendingList = response.data;
         for (let x of this.pendingList) {
-          this.buttonDisabled.push(false);
+          this.passButtonDisabled.push(false);
+          this.feedbackBtnDisabled.push(false);
           x.startTime = this.formatDate(x.startTime);
           x.endTime = this.formatDate(x.endTime);
         }
@@ -106,6 +111,7 @@ export default {
     },
     handleReview(index, row) {
       console.log(index, row);
+      this.feedbackBtnDisabled.splice(index, 1, true);
       this.showFeedback = true;
 
       setTimeout(() => {
@@ -123,8 +129,8 @@ export default {
           console.log(response.data);
           if (response.data === true) {
             console.log('hello');
-            this.buttonDisabled.splice(index, 1, true);
-            console.log(this.buttonDisabled);
+            this.passButtonDisabled.splice(index, 1, true);
+            console.log(this.passButtonDisabled);
           }
         });
 

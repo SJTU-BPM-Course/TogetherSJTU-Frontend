@@ -53,16 +53,15 @@ export default {
   data() {
     return {
       sizeForm: {
-        imageURL: "",
-        activityType: "",
-        activityTitle: "",
-        activityDescription: "",
+        imageURL: "111",
+        activityType: "111",
+        activityTitle: "111",
+        activityDescription: "111",
         startTime: "2021-01-01 12:00:00",
         endTime: "2021-01-01 14:00:00",
         activityPlace: "",
         activityCreator: "",
         activityID: "",
-        // ---
       },
       activityComment: '',
     };
@@ -71,6 +70,15 @@ export default {
     onSubmit() {
       console.log('submit!');
       console.log(this.sizeForm.activityID, this.activityComment);
+      this.$axios.post('/activity/reject', {
+        activityID: this.sizeForm.activityID,
+        comment: this.activityComment
+      }).then((res) => {
+        console.log(res.data);
+        var msg = res.data === true ? "成功" : "失败";
+        this.$msgbox.alert("提交反馈" + msg + "。");
+        this.$parent.showUnreviewedList();
+      })
     },
     setFormData(obj) {
       this.sizeForm = obj;
