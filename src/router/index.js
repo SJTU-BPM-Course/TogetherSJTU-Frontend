@@ -14,6 +14,7 @@ import TeacherAdmin from "../components/teacher/TeacherAdmin";
 import ActivityForm from "../components/teacher/ActivityForm";
 import AdminHome from "../components/admin/AdminHome";
 import AdminPending from "../components/admin/AdminPending";
+import AdminConflict from "../components/admin/AdminConflict";
 
 Vue.use(Router)
 
@@ -47,6 +48,11 @@ export default new Router({
           path: '/adminPending',
           name: 'AdminPending',
           component: AdminPending
+        },
+        {
+          path: '/adminConflict',
+          name: 'AdminConflict',
+          component: AdminConflict
         }
       ]
     },

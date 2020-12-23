@@ -42,7 +42,13 @@
       </el-form>
     </div>
     <div class="right-div">
-      <img :src="sizeForm.imageURL" style="border-radius: 20px; max-height: 500px; max-width: 800px"/>
+      <div style="float: left">
+        <img :src="sizeForm.imageURL" style="border-radius: 20px; max-height: 500px; max-width: 600px"/>
+      </div>
+      <div style="float: right; margin-left: 20px">
+        <h3 style="margin-top: 0px;">活动简介</h3>
+        <p style="max-width: 350px">{{ sizeForm.activityDescription }}</p>
+      </div>
     </div>
   </div>
 

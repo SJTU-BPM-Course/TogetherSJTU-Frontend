@@ -1,8 +1,8 @@
 <template>
-  <div v-if="showFeedback === false">
+  <div>
     <h2 style="float: left;">
       <i class="el-icon-check"></i>
-      待审核活动
+      存在冲突的活动
     </h2>
     <el-table
       :data="pendingList"
@@ -23,7 +23,7 @@
               </div>
             </div>
             <div slot="reference" class="name-wrapper">
-              <el-tag size="medium" @click="handleReview(scope.$index, scope.row)">{{ scope.row.activityTitle }}</el-tag>
+              <el-tag size="medium">{{ scope.row.activityTitle }}</el-tag>
             </div>
           </el-popover>
         </template>
@@ -67,77 +67,16 @@
       </el-table-column>
     </el-table>
   </div>
-  <div v-else style="text-align: left; float: left">
-    <span @click="showUnreviewedList">
-      <h2><i class="el-icon-back"></i> 反馈</h2>
-    </span>
-    <div>
-      <ActivityForm ref="AdminActivityForm"></ActivityForm>
-    </div>
-  </div>
 </template>
 
 <script>
-import ActivityForm from "./ActivityForm";
-
 export default {
-  name: "AdminPending",
-  components: {ActivityForm},
-  data() {
+  name: "AdminConflict",
+  date() {
     return {
       pendingList: [],
       passButtonDisabled: [],
       feedbackBtnDisabled: [],
-      showFeedback: false,
-    }
-  },
-  mounted() {
-    this.$axios
-      .get('/activity/getUnreviewed', {})
-      .then((response) => {
-        console.log(response.data);
-        this.pendingList = response.data;
-        for (let x of this.pendingList) {
-          this.passButtonDisabled.push(false);
-          this.feedbackBtnDisabled.push(false);
-          x.startTime = this.formatDate(x.startTime);
-          x.endTime = this.formatDate(x.endTime);
-        }
-      });
-  },
-  methods: {
-    showUnreviewedList() {
-      this.showFeedback = false;
-    },
-    handleReview(index, row) {
-      console.log(index, row);
-      this.feedbackBtnDisabled.splice(index, 1, true);
-      this.showFeedback = true;
-
-      setTimeout(() => {
-        this.$refs.AdminActivityForm.setFormData(row);
-        // this.$refs.AdminActivityForm.setFormData(row.activityID, row.activityTitle, row.activityPlace,
-        //   row.startTime, row.endTime, row.activityType);
-      })
-
-    },
-    handlePass(index, row) {
-      console.log('handlePass', index, row);
-      this.$axios
-        .get('/activity/setReviewStatus?actid=' + row.activityID + '&status=1')
-        .then((response) => {
-          console.log(response.data);
-          if (response.data === true) {
-            console.log('hello');
-            this.passButtonDisabled.splice(index, 1, true);
-            console.log(this.passButtonDisabled);
-          }
-        });
-
-    },
-    formatDate(time) {
-      let temp = new Date(time);
-      return temp.toLocaleString('en-US');
     }
   }
 }

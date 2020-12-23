@@ -45,7 +45,7 @@ export default {
       currentPath: '/adminPending',
       navList: [
         {name: '/adminPending', navItem: '待审核'},
-        // {name: '/adminPending', navItem: '待审核'},
+        {name: '/adminConflict', navItem: '冲突处理'},
         // {name: '/adminPending', navItem: '待审核'},
       ]
     }
