@@ -37,7 +37,7 @@
           </el-input>
         </el-form-item>
         <el-form-item size="large">
-          <el-button type="primary" @click="onSubmit">提出反馈</el-button>
+          <el-button type="primary" @click="onSubmit">反馈意见</el-button>
         </el-form-item>
       </el-form>
     </div>
