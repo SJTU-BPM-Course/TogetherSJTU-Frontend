@@ -2,8 +2,8 @@
   <div style="float: none">
     <div class="left-div">
       <el-form ref="form" :model="sizeForm" label-width="120px" size="medium" style="width: 500px">
-        <el-form-item label="活动名称">
-          <el-input v-model="sizeForm.activityID" style="width:100%"></el-input>
+        <el-form-item label="活动ID">
+          <el-input :disabled="true" v-model="sizeForm.activityID" style="width:100%"></el-input>
         </el-form-item>
         <el-form-item label="活动名称">
           <el-input v-model="sizeForm.activityTitle" style="width:100%"></el-input>

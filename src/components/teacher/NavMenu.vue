@@ -46,8 +46,8 @@ export default {
         {name: '/teacherIndex', navItem: '首页'},
         {name: '/teacherActivity', navItem: '活动'},
         {name: '/activityCalendar', navItem: '日程'},
+        {name: '/teacherFeedback', navItem: '反馈'},
         {name: '/teacherAdmin', navItem: '管理'},
-        // {name: '/teacherDummy', navItem: '占位符'},
       ]
     }
   }

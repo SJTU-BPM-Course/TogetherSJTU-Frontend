@@ -15,6 +15,7 @@ import ActivityForm from "../components/teacher/ActivityForm";
 import AdminHome from "../components/admin/AdminHome";
 import AdminPending from "../components/admin/AdminPending";
 import AdminConflict from "../components/admin/AdminConflict";
+import TeacherFeedback from "../components/teacher/TeacherFeedback";
 
 Vue.use(Router)
 
@@ -26,7 +27,7 @@ export default new Router({
       path: '/',
       name: 'HelloWorld',
       component: HelloWorld,
-      redirect: '/adminHome',
+      redirect: '/teacherHome',
     },
     {
       path: '/login',
@@ -75,6 +76,11 @@ export default new Router({
           path: '/activityCalendar',
           name: ActivityCalendar,
           component: ActivityCalendar
+        },
+        {
+          path: '/teacherFeedback',
+          name: 'TeacherFeedback',
+          component: TeacherFeedback
         },
         {
           path: '/teacherAdmin',
