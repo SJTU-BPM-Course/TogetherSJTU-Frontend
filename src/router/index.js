@@ -16,7 +16,7 @@ import AdminHome from "../components/admin/AdminHome";
 import AdminPending from "../components/admin/AdminPending";
 import AdminConflict from "../components/admin/AdminConflict";
 import TeacherFeedback from "../components/teacher/TeacherFeedback";
-
+import TeacherRecommend from "../components/teacher/TeacherRecommend";
 Vue.use(Router)
 
 export default new Router({
@@ -92,6 +92,11 @@ export default new Router({
           name: TeacherDummy,
           component: TeacherDummy
         },
+        {
+          path: '/teacherRecommend',
+          name: TeacherRecommend,
+          component: TeacherRecommend
+        }
 
       ]
     }

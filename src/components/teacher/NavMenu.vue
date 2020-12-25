@@ -48,6 +48,7 @@ export default {
         {name: '/activityCalendar', navItem: '日程'},
         {name: '/teacherFeedback', navItem: '反馈'},
         {name: '/teacherAdmin', navItem: '管理'},
+        {name: '/teacherRecommend', navItem: '活动创建辅助'}
       ]
     }
   }
