@@ -159,6 +159,8 @@ export default {
         for (let item of data) {
           item.startTime = this.formatDate(item.startTime);
           item.endTime = this.formatDate(item.endTime);
+          this.passButtonDisabled.push(false);
+          this.rejectBtnDisabled.push(false);
         }
         this.pendingList = this.pendingList.concat(data);
       });
@@ -169,6 +171,8 @@ export default {
         for (let item of data) {
           item.startTime = this.formatDate(item.startTime);
           item.endTime = this.formatDate(item.endTime);
+          this.passButtonDisabled.push(false);
+          this.rejectBtnDisabled.push(false);
         }
         this.pendingList = this.pendingList.concat(data);
       });
